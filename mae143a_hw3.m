@@ -6,16 +6,64 @@ close all;
 
 %PID Bode Plot
 figure(1)
+F_hpa = RR_tf([1 0],[1 1]);
+RR_bode(F_hpa)
+
+figure(2)
+F_lpa = RR_tf([100],[1 100]);
+RR_bode(F_lpa)
+
+figure(3)
+F_bp = RR_tf([100 0],[1 101 100]);
+RR_bode(F_bp)
+
+figure(4)
+F_lag = RR_tf([1 1],[1 0.1]);
+RR_bode(F_lag)
+
+figure(5)
+F_lead = RR_tf([10 1000],[1 1000]);
+RR_bode(F_lead)
+
+figure(6)
+F_lead_lag = RR_tf([10 1010 1000],[1 1000.1 100]);
+RR_bode(F_lead_lag)
+
+figure(7)
 F_pid = RR_tf([1 101 100],[1 0]);
 RR_bode(F_pid)
 
-figure(2)
-F_bp = RR_tf([1 0],[1 101 100]);
-RR_bode(F_bp)
+figure(8)
+F_lbp = RR_tf([1],[1 1]);
+RR_bode(F_lbp)
 
-figure(3)
-F_ap = RR_tf([1 -1],[1 1]);
-RR_bode(F_ap)
+figure(9)
+F_hbp = RR_tf([1 0],[1 100]);
+RR_bode(F_hbp)
+
+figure(10)
+F_bs = RR_tf([1 2 100],[1 101 100]);
+RR_bode(F_bs)
+
+figure(11)
+F_notch1 = RR_tf([1 0 100],[1 20 100]);
+RR_bode(F_notch1)
+
+figure(12)
+F_notch2 = RR_tf([1 0 100],[1 2 100]);
+RR_bode(F_notch2)
+
+figure(13)
+F_ap1 = RR_tf([1 -1],[1 1]);
+RR_bode(F_ap1)
+
+figure(14)
+F_ap2 = RR_tf([-1 1],[1 1]);
+RR_bode(F_ap2)
+
+figure(15)
+F_ap3 = RR_tf([-1 -1],[1 -1]);
+RR_bode(F_ap3)
 
 %% Problem 4
 %Part 1
